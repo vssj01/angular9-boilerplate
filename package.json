@@ -3,11 +3,13 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --c=dev",
+    "build": "ng build --c=dev",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "start:prod ": "ng serve --c=prod",
+    "build:prod": "ng build --c=prod"
   },
   "private": true,
   "dependencies": {
@@ -19,6 +21,9 @@
     "@angular/platform-browser": "~9.1.11",
     "@angular/platform-browser-dynamic": "~9.1.11",
     "@angular/router": "~9.1.11",
+    "font-awesome": "^4.7.0",
+    "foundation-sites": "^6.6.3",
+    "ngx-foundation": "^1.0.8",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"

@@ -17,49 +17,56 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/vssj-angular9-boilerplate",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
+            "optimization": true,
+            "outputHashing": "all",
+            "sourceMap": true,
+            "extractCss": true,
+            "namedChunks": false,
+            "extractLicenses": true,
+            "vendorChunk": false,
+            "buildOptimizer": true,
+            "budgets": [
+              {
+                "type": "initial",
+                "maximumWarning": "2mb",
+                "maximumError": "5mb"
+              },
+              {
+                "type": "anyComponentStyle",
+                "maximumWarning": "6kb",
+                "maximumError": "10kb"
+              }
             ],
+            "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
+              "node_modules/foundation-sites/dist/css/foundation.min.css",
               "src/styles.scss"
             ],
             "scripts": []
           },
           "configurations": {
-            "production": {
+            "dev": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.dev.ts"
+                }
+              ]
+            },
+            "prod": {
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
-                }
-              ]
+              "sourceMap": false
             }
           }
         },
@@ -69,8 +76,11 @@
             "browserTarget": "vssj-angular9-boilerplate:build"
           },
           "configurations": {
-            "production": {
-              "browserTarget": "vssj-angular9-boilerplate:build:production"
+            "dev": {
+              "browserTarget": "vssj-angular9-boilerplate:build:dev"
+            },
+            "prod": {
+              "browserTarget": "vssj-angular9-boilerplate:build:prod"
             }
           }
         },
@@ -87,13 +97,8 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["src/favicon.ico", "src/assets"],
+            "styles": ["src/styles.scss"],
             "scripts": []
           }
         },
@@ -105,9 +110,7 @@
               "tsconfig.spec.json",
               "e2e/tsconfig.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "e2e": {
@@ -123,6 +126,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "vssj-angular9-boilerplate"
+    }
+  },
+  "defaultProject": "vssj-angular9-boilerplate",
+  "cli": {
+    "analytics": "c74666e8-0c20-4429-9854-ef1fd807aa50"
+  }
 }
