@@ -23,6 +23,7 @@
     "@angular/router": "~9.1.11",
     "font-awesome": "^4.7.0",
     "foundation-sites": "^6.6.3",
+    "ngx-bootstrap": "^6.2.0",
     "ngx-foundation": "^1.0.8",
     "rxjs": "~6.5.4",
     "tslib": "^1.10.0",

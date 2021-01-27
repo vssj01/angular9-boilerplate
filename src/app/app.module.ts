@@ -11,8 +11,6 @@ import {
   CarouselModule, // Foundation Orbit
   CollapseModule,
   BsDatepickerModule,
-  BsDropdownModule, // Foundation Dropdown Menus and Dropdown Panes
-  ModalModule, // Foundation Reveal
   OffcanvasModule,
   PaginationModule,
   ProgressbarModule,
@@ -23,10 +21,23 @@ import {
   TooltipModule,
   TypeaheadModule,
 } from 'ngx-foundation';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+// import { PaginationModule as btp } from 'ngx-bootstrap/pagination';
 
 @NgModule({
   declarations: [AppComponent, TabsComponent],
-  imports: [BrowserModule, AppRoutingModule, TabsModule.forRoot()],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    TabsModule.forRoot(),
+    TooltipModule.forRoot(),
+    PaginationModule.forRoot(),
+    ModalModule.forRoot(),
+    BrowserAnimationsModule,
+    BsDropdownModule.forRoot(),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
