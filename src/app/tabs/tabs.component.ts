@@ -1,5 +1,4 @@
-import { Component, OnInit, TemplateRef } from '@angular/core';
-import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-tabs',
@@ -7,13 +6,7 @@ import { BsModalService, BsModalRef } from 'ngx-bootstrap/modal';
   styleUrls: ['./tabs.component.scss'],
 })
 export class TabsComponent implements OnInit {
-  modalRef: BsModalRef;
-  constructor(private modalService: BsModalService) {}
-  openModal(template: TemplateRef<any>) {
-    console.log('hiiiiiiiiii');
-
-    this.modalRef = this.modalService.show(template, { class: 'tiny' });
-  }
-
-  ngOnInit(): void {}
+  tabs = ['tab1', 'tab2', 'tab3'];
+  constructor() {}
+  ngOnInit() {}
 }

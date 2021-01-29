@@ -39,7 +39,7 @@
             "extractCss": true,
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
-              "node_modules/foundation-sites/dist/css/foundation.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.scss"
             ],
             "scripts": []
